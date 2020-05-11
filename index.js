@@ -17,7 +17,7 @@
 function processFirstItem(stringList, callback) {
   return callback(stringList[0])
 }
-Placeholder
+
 // ⭐️ Example Challenge END ⭐️
 
 
@@ -28,10 +28,16 @@ Placeholder
  * 
  * 1. What is the difference between counter1 and counter2?
  * 
+ * counter1 has the variable count defined inside itself, while the count variable is a global variable in count2.
+ * 
  * 2. Which of the two uses a closure? How can you tell?
+ * 
+ * counter1 uses a closure because it invokes a new 'inner' function inside of itself and returns it.
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
  *
+ * counter1 code would be preferable if you wanted to store the memory of it in order to build of past calls.
+ * 
 */
 
 // counter1 code
