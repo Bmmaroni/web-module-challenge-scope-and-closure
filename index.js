@@ -122,8 +122,27 @@ and returns the score at each pont in the game, like so:
 
 Final Score: 6 - 10 */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
-}
+function scoreboard(cb, numOfIns) {
+  
+  let homeScore = 0;
+  let awayScore = 0;
 
+  for(let i = 0; i < numOfIns - 1; i++){
+      
+  }
+
+  return {
+    '1st Inning': `${homeScore} - ${awayScore}`,
+    '2nd Inning': `${homeScore} - ${awayScore}`,
+    '3rd Inning': `${homeScore} - ${awayScore}`,
+    '4th Inning': `${homeScore} - ${awayScore}`,
+    '5th Inning': `${homeScore} - ${awayScore}`,
+    '6th Inning': `${homeScore} - ${awayScore}`,
+    '7th Inning': `${homeScore} - ${awayScore}`,
+    '8th Inning': `${homeScore} - ${awayScore}`,
+    '9th Inning': `${homeScore} - ${awayScore}`
+  }
+
+}
+console.log(scoreboard(inning, 9))
 
