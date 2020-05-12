@@ -36,7 +36,8 @@ function processFirstItem(stringList, callback) {
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
  *
- * counter1 code would be preferable if you wanted to store the memory of it in order to build of past calls.
+ * counter1 code would be preferable if you wanted to store the memory of it in order to build off past calls.
+ * counter2 code would be preferable if you wanted to use the variable count in other places so it was accessible.
  * 
 */
 
@@ -62,15 +63,12 @@ function counter2() {
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(repeat){
-    let score;
-    for( let i = 0; i <= repeat; i++ ){
-    score = i + (Math.floor(Math.random() * Math.floor(2)));
-    }
-    return score
-
+function inning(){
+   
+  let score = Math.round(Math.random() * 2);
+  return score;
 }
-console.log(inning(10))
+console.log(inning());
 
 /* Task 3: finalScore()
 
@@ -86,10 +84,15 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(cb, number){
+function finalScore(cb, numOfIns){
 
-  let homeScore = cb(number);
-  let awayScore = cb(number);
+  let homeScore = 0;
+  let awayScore = 0;
+
+  for(let i = 0; i < numOfIns-1; i++){
+    homeScore += cb();
+    awayScore += cb();
+  }
 
   return {
     "Home": homeScore,
