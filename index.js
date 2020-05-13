@@ -126,23 +126,33 @@ function scoreboard(cb, numOfIns) {
   
   let homeScore = 0;
   let awayScore = 0;
+  let score = [];
 
-  for(let i = 0; i < numOfIns - 1; i++){
-      
+  for(let i = 0; i < numOfIns; i++){
+    const numOfIn = i + 1;
+    homeScore += cb();
+    awayScore += cb();
+    let suffix = 'th';
+    if (numOfIn === 1){
+      suffix = 'st';
+    }else if (numOfIn === 2){
+      suffix = 'nd';
+    }else if (numOfIn === 3){
+      suffix = 'rd';
+    }else{
+      suffix = 'th';
+    }
+    score.push(`${numOfIn}${suffix} Inning: ${homeScore} - ${awayScore}`);
+    
   }
 
-  return {
-    '1st Inning': `${homeScore} - ${awayScore}`,
-    '2nd Inning': `${homeScore} - ${awayScore}`,
-    '3rd Inning': `${homeScore} - ${awayScore}`,
-    '4th Inning': `${homeScore} - ${awayScore}`,
-    '5th Inning': `${homeScore} - ${awayScore}`,
-    '6th Inning': `${homeScore} - ${awayScore}`,
-    '7th Inning': `${homeScore} - ${awayScore}`,
-    '8th Inning': `${homeScore} - ${awayScore}`,
-    '9th Inning': `${homeScore} - ${awayScore}`
-  }
+  let finalScore = `Final Score: ${homeScore} - ${awayScore}`;
+
+  finalScore;
+
+  console.log(score);
+  console.log(finalScore);
 
 }
-console.log(scoreboard(inning, 9))
+scoreboard(inning, 9);
 
